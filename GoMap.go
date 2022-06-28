@@ -1,3 +1,4 @@
+//go:generate goversioninfo -icon=GoMap.ico -manifest=GoMap.exe.manifest
 package main
 
 func main() {
