@@ -2,8 +2,8 @@
 package main
 
 import (
+	"GoMap/pkg"
 	"flag"
-	"fmt"
 )
 
 func main() {
@@ -11,6 +11,13 @@ func main() {
 	flagMode := flag.String("m", "fe", "Création des dossiers pour un exports")
 	flag.Parse()
 
-	fmt.Println("test")
+	txtMode := ""
+	switch *flagMode {
+	case "fe":
+		txtMode = "Folders Export"
+	}
+
+	pkg.DrawStart(txtMode)
+	pkg.DrawSep("BUILD")
 
 }

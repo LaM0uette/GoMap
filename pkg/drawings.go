@@ -27,7 +27,7 @@ func DrawStart(txt string) {
 	defer time.Sleep(1 * time.Second)
 
 	loger.Ui(start)
-	loger.Ui("\t\t", mode+"Jointure"+txt, "\n")
+	loger.Ui("\t\t", mode+txt, "\n")
 	loger.Ui("\t\t", author+config.Author, "\n", "\t\t", version+config.Version)
 	loger.Ui("\n")
 
