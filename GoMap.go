@@ -2,22 +2,34 @@
 package main
 
 import (
+	"GoMap/loger"
 	"GoMap/pkg"
+	"GoMap/rgb"
+	"bufio"
 	"flag"
+	"os"
 )
 
 func main() {
 
-	flagMode := flag.String("m", "fe", "Création des dossiers pour un exports")
+	flagMode := flag.String("m", "fe", "Creation des dossiers pour un exports")
 	flag.Parse()
 
-	txtMode := ""
+	pkg.DrawStart("Folders Export")
+	pkg.DrawSep("BUILD")
+
 	switch *flagMode {
 	case "fe":
-		txtMode = "Folders Export"
+		// Lancer fct
 	}
 
-	pkg.DrawStart(txtMode)
-	pkg.DrawSep("BUILD")
+	pkg.DrawSep(" FIN ")
+	pkg.DrawEnd()
+
+	rgb.GreenB.Print("Appuyer sur Entrée pour quitter...")
+	_, err := bufio.NewReader(os.Stdin).ReadBytes('\n')
+	if err != nil {
+		loger.Crash("Crash :", err)
+	}
 
 }
