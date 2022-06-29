@@ -4,8 +4,8 @@ cls
 
 echo.
 echo Ajout de la variable en cours..
-setx ConcatFiles "T:\- 4 Suivi Appuis\26_MACROS\GO\ConcatFiles\ConcatFiles.exe"
+setx GoMap "T:\- 4 Suivi Appuis\26_MACROS\GOGoMap\GoMap.exe"
 echo.
-start "" "T:\- 4 Suivi Appuis\26_MACROS\GO\ConcatFiles\ConcatFiles_REG.reg"
+start "" "T:\- 4 Suivi Appuis\26_MACROS\GO\GoMap\GoMap_REG.reg"
 
 pause
