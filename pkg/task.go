@@ -22,7 +22,7 @@ func GetUserInput(msg string) any {
 
 	input, err := bufio.NewReader(os.Stdin).ReadBytes('\n')
 	if err != nil {
-		loger.Crash("Crash lor de la recuperation de la saisie utilisateur :", err)
+		loger.Crash("Crash lors de la recuperation de la saisie utilisateur :", err)
 		return nil
 	}
 
