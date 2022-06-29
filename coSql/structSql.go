@@ -3,6 +3,6 @@ package coSql
 type Refcode struct {
 	NRO      int
 	SRO      int
-	RefCode1 string
+	RefCode1 int
 	RefCode2 string
 }
