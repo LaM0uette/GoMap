@@ -56,7 +56,14 @@ func getDlgData() dlgData {
 func createDlgFolders(dlg dlgData) {
 	fRIP := fmt.Sprintf("RIP%v", dlg.Refcode1)
 	fZone := fmt.Sprintf("NRO%v_PM%v_%s", dlg.NRO, dlg.SRO, dlg.Refcode3)
-	fLivraison := fmt.Sprintf("%s_%v", dlg.Phase, dlg.Livaison)
+
+	var fLivraison string
+	if dlg.Phase == "EXE" {
+		fLivraison = dlg.Phase
+	} else {
+		fLivraison = fmt.Sprintf("%s_%v", dlg.Phase, dlg.Livaison)
+	}
+
 	fVersion := fmt.Sprintf("V%v", dlg.Version)
 
 	p := path.Join(FolderExportsGrace, fRIP, fZone, fLivraison, fVersion)

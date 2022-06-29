@@ -28,5 +28,4 @@ func main() {
 	if err != nil {
 		loger.Crash("Crash :", err)
 	}
-
 }
