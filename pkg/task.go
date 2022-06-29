@@ -7,6 +7,20 @@ import (
 	"os"
 )
 
+//
+//
+// FUNCTIONS
+
+func CreateNewFolder(path string) {
+	if err := os.MkdirAll(path, os.ModePerm); err != nil {
+		loger.Error("Erreur durant la création du dossier", err)
+	}
+}
+
+//
+//
+// GETTERS
+
 func GetCurrentDir() string {
 	pwd, err := os.Getwd()
 	if err != nil {
@@ -16,7 +30,7 @@ func GetCurrentDir() string {
 	return pwd
 }
 
-func GetUserInput(msg string) any {
+func GetUserInput(msg string) string {
 
 	rgb.GreenB.Print(msg)
 
@@ -24,7 +38,7 @@ func GetUserInput(msg string) any {
 	_, err := fmt.Scanln(&input)
 	if err != nil {
 		loger.Crash("Crash lors de la recuperation de la saisie utilisateur : ", err)
-		return nil
+		return ""
 	}
 
 	return input
