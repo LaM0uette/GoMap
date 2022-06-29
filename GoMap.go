@@ -15,12 +15,9 @@ func main() {
 	flagMode := flag.String("m", "fe", "Creation des dossiers pour un exports")
 	flag.Parse()
 
-	pkg.DrawStart("Folders Export")
-	pkg.DrawSep("BUILD")
-
 	switch *flagMode {
 	case "fe":
-		// Lancer fct
+		pkg.FoldersExport()
 	}
 
 	pkg.DrawSep(" FIN ")
