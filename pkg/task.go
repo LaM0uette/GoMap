@@ -20,8 +20,8 @@ func GetUserInput(msg string) any {
 
 	rgb.GreenB.Print(msg)
 
-	var input string
-	_, err := fmt.Scanf("%v", &input)
+	input := ""
+	_, err := fmt.Scanln(&input)
 	if err != nil {
 		loger.Crash("Crash lors de la recuperation de la saisie utilisateur : ", err)
 		return nil
