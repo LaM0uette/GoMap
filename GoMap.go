@@ -12,12 +12,14 @@ import (
 
 func main() {
 
-	flagMode := flag.String("m", "fe", "Creation des dossiers pour un exports")
+	flagMode := flag.String("m", "cls", "Creation des dossiers pour un exports")
 	flag.Parse()
 
 	switch *flagMode {
 	case "fe":
 		pkg.FoldersExport()
+	case "cls":
+		pkg.CleanDlgFiles()
 	}
 
 	pkg.DrawSep(" FIN ")
