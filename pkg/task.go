@@ -3,7 +3,7 @@ package pkg
 import (
 	"ConcatFiles/loger"
 	"GoMap/rgb"
-	"bufio"
+	"fmt"
 	"os"
 )
 
@@ -20,9 +20,10 @@ func GetUserInput(msg string) any {
 
 	rgb.GreenB.Print(msg)
 
-	input, err := bufio.NewReader(os.Stdin).ReadBytes('\n')
+	var input string
+	_, err := fmt.Scanf("%v", &input)
 	if err != nil {
-		loger.Crash("Crash lors de la recuperation de la saisie utilisateur :", err)
+		loger.Crash("Crash lors de la recuperation de la saisie utilisateur : ", err)
 		return nil
 	}
 
