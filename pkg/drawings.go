@@ -32,7 +32,7 @@ func DrawStart(txt string) {
 	loger.Ui("\n")
 
 	rgb.Green.Println(start)
-	fmt.Print("\t\t", mode+rgb.Green.Sprint("Jointure"+txt), "\n")
+	fmt.Print("\t\t", mode+rgb.Green.Sprint(txt), "\n")
 	fmt.Print("\t\t", author+rgb.Green.Sprint(config.Author), "\n", "\t\t", version+rgb.Green.Sprint(config.Version))
 	fmt.Print("\n\n")
 }
