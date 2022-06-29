@@ -48,10 +48,6 @@ func getDlgData() dlgData {
 	livaison, _ := strconv.Atoi(GetUserInput("Entrez le n° de LIVRAISON : "))
 	_version, _ := strconv.Atoi(GetUserInput("Entrez le n° de VERSION : "))
 
-	if strings.Contains(phase, "REC") {
-		strings.Replace(phase, "REC", "DOE", 1)
-	}
-
 	rc := coSql.GetRefcodeData(refcode3)
 
 	return dlgData{
