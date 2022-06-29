@@ -2,6 +2,7 @@ package pkg
 
 import (
 	"GoMap/coSql"
+	"GoMap/loger"
 	"fmt"
 	"path"
 	"strconv"
@@ -25,8 +26,11 @@ func FoldersExport() {
 	DrawSep("INITIALISATION")
 
 	dlg := getDlgData()
-	createDlgFolders(dlg)
 
+	DrawSep("CREATION DES DOSSIERS")
+
+	createDlgFolders(dlg)
+	loger.Ok("Dossiers créés !")
 }
 
 func getDlgData() dlgData {
