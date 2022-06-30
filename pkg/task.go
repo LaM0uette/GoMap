@@ -56,6 +56,24 @@ func GetCurrentDir() string {
 	return pwd
 }
 
+func getDLGName(dir string) string {
+	var dlg string
+
+	err := filepath.Walk(dir, func(path string, fileInfo os.FileInfo, err error) error {
+		if fileInfo.IsDir() && strings.Contains(fileInfo.Name(), "-DLG-") && !strings.Contains(fileInfo.Name(), "_") {
+			dlg = fileInfo.Name()
+			return nil
+		}
+		return nil
+	})
+
+	if err != nil {
+		loger.Error("Error pendant le listing des dossiers", err)
+	}
+
+	return dlg
+}
+
 func GetUserInput(msg string) string {
 
 	rgb.GreenB.Print(msg)
