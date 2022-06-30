@@ -67,10 +67,9 @@ func createDlgFolders(dlg dlgData) {
 	fVersion := fmt.Sprintf("V%v", dlg.Version)
 
 	p := path.Join(FolderExportsGrace, fRIP, fZone, fLivraison, fVersion)
-	folders := []string{"__Historiques__", "DJANGO", "DLG", "PDB", "ROPT"}
 
-	for folder := range folders {
-		CreateNewFolder(path.Join(p, folders[folder]))
+	for folder := range DLGFolders {
+		CreateNewFolder(path.Join(p, DLGFolders[folder]))
 	}
 
 	CreateNewFolder(path.Join(p,
