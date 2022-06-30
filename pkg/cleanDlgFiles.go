@@ -12,7 +12,6 @@ func CleanDlgFiles() {
 	DrawStart("Clean DLG Files")
 	DrawSep("RUN")
 
-	DrawParam("INITIALISATION...")
 	DrawParam("CREATION DES VARIABLES...")
 
 	p := "C:\\Users\\XD5965\\OneDrive - EQUANS\\Bureau\\V12"
@@ -32,5 +31,6 @@ func CleanDlgFiles() {
 		CreateNewFolder(path.Join(p, "DLG", dlg))
 	}
 
+	DrawSep("RESULTAT")
 	loger.Ok("Nettoyage terminé !")
 }
