@@ -17,6 +17,13 @@ func CreateNewFolder(path string) {
 	}
 }
 
+func RemoveAllFiles(path string) {
+	err := os.RemoveAll(path)
+	if err != nil {
+		loger.Crash("Erreur durant la suppression des fichiers", err)
+	}
+}
+
 //
 //
 // GETTERS
