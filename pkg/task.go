@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"os"
 	"path/filepath"
+	"strings"
 )
 
 //
@@ -31,6 +32,10 @@ func RemoveAllDlgFiles(dir string) {
 	}
 
 	for _, name := range names {
+		if strings.Contains(strings.ToLower(name), "liste") || strings.Contains(strings.ToLower(name), "pbo") {
+			return
+		}
+
 		err = os.RemoveAll(filepath.Join(dir, name))
 		if err != nil {
 			loger.Crash("Erreur durant la suppression des fichiers", err)
