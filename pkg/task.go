@@ -33,7 +33,7 @@ func RemoveAllDlgFiles(dir string) {
 
 	for _, name := range names {
 		if strings.Contains(strings.ToLower(name), "liste") || strings.Contains(strings.ToLower(name), "pbo") {
-			return
+			continue
 		}
 
 		err = os.RemoveAll(filepath.Join(dir, name))
