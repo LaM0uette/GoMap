@@ -5,6 +5,7 @@ import (
 	"GoMap/rgb"
 	"fmt"
 	"os"
+	"path/filepath"
 )
 
 //
@@ -17,10 +18,23 @@ func CreateNewFolder(path string) {
 	}
 }
 
-func RemoveAllFiles(path string) {
-	err := os.RemoveAll(path)
+func RemoveAllDlgFiles(dir string) {
+	d, err := os.Open(dir)
 	if err != nil {
-		loger.Crash("Erreur durant la suppression des fichiers", err)
+		loger.Crash("Erreur durant l'ouverture du dossier", err)
+	}
+	defer d.Close()
+
+	names, err := d.Readdirnames(-1)
+	if err != nil {
+		loger.Crash("Erreur durant la lecture des fichiers", err)
+	}
+
+	for _, name := range names {
+		err = os.RemoveAll(filepath.Join(dir, name))
+		if err != nil {
+			loger.Crash("Erreur durant la suppression des fichiers", err)
+		}
 	}
 }
 

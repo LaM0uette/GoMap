@@ -15,8 +15,8 @@ func CleanDlgFiles() {
 			continue
 		}
 
-		//RemoveAllFiles(path.Join(GetCurrentDir(), DLGFolders[folder]))
+		//RemoveAllDlgFiles(path.Join(GetCurrentDir(), DLGFolders[folder]))
 		p := "C:\\Users\\XD5965\\OneDrive - EQUANS\\Bureau\\V12"
-		RemoveAllFiles(path.Join(p, DLGFolders[folder]))
+		RemoveAllDlgFiles(path.Join(p, DLGFolders[folder]))
 	}
 }
