@@ -58,6 +58,12 @@ func createDlgFolders(dlg dlgData) {
 	fZone := fmt.Sprintf("NRO%v_PM%v_%s", dlg.NRO, dlg.SRO, dlg.Refcode3)
 
 	var fLivraison string
+	var phase string
+
+	if dlg.Phase[0:3] == "DOE" {
+		phase = "REC"
+	}
+
 	if dlg.Phase == "EXE" {
 		fLivraison = dlg.Phase
 	} else {
@@ -75,7 +81,7 @@ func createDlgFolders(dlg dlgData) {
 	CreateNewFolder(path.Join(p,
 		"DLG",
 		fmt.Sprintf("%s-DLG-%v-%s-%s-%s-V%v",
-			dlg.Phase[0:3],
+			phase,
 			dlg.Refcode1,
 			dlg.Refcode2,
 			dlg.Refcode3,
