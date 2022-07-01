@@ -9,7 +9,7 @@ import (
 const (
 	Name    = "GoMap"
 	Author  = "LaM0uette"
-	Version = "0.1"
+	Version = "0.2"
 )
 
 var (
