@@ -14,8 +14,8 @@ func CleanDlgFiles() {
 
 	DrawParam("CREATION DES VARIABLES...")
 
-	p := "C:\\Users\\XD5965\\OneDrive - EQUANS\\Bureau\\V12"
-	dlg := getDLGName(p)
+	dlgPath := GetCurrentDir()
+	dlg := getDLGName(dlgPath)
 
 	for folder := range DLGFolders {
 		if strings.Contains(DLGFolders[folder], "_") {
@@ -23,12 +23,12 @@ func CleanDlgFiles() {
 		}
 
 		//RemoveAllDlgFiles(path.Join(GetCurrentDir(), DLGFolders[folder]))
-		RemoveAllDlgFiles(path.Join(p, DLGFolders[folder]))
+		RemoveAllDlgFiles(path.Join(dlgPath, DLGFolders[folder]))
 		loger.Ok(fmt.Sprintf("Dosier %s vidé !", DLGFolders[folder]))
 	}
 
 	if len(dlg) > 0 {
-		CreateNewFolder(path.Join(p, "DLG", dlg))
+		CreateNewFolder(path.Join(dlgPath, "DLG", dlg))
 	}
 
 	DrawSep("RESULTAT")
